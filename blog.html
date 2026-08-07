@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog | RentNest</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .blog-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      transition: transform var(--transition-normal);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .blog-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: var(--spacing-6);
+    }
+
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: var(--spacing-2);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <i class="ri-home-smile-line"></i>
+          <span>RentNest</span>
+        </a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home-2.html">Home 2</a>
+        <a href="about.html">About</a>
+        <a href="rental-packages.html">Rental Packages</a>
+        <a href="furniture-categories.html">Furniture</a>
+        <a href="pricing.html">Pricing</a>
+
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="ri-moon-line"></i>
+        </button>
+        <button class="rtl-toggle" aria-label="Toggle RTL">
+          <i class="ri-arrow-left-right-line"></i>
+        </button>
+        <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
+
+        <a href="signup.html" class="btn btn-primary">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Open Mobile Menu">
+        <i class="ri-menu-line"></i>
+      </button>
+    </div>
+  </header>
+
+
+  <section class="section" style="padding-top: 120px; text-align: center; background: var(--color-surface-hover);">
+    <div class="container animate fade-up">
+      <h1>The RentNest Blog</h1>
+      <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Interior design tips, student living hacks, and
+        modern work setups.</p>
+    </div>
+  </section>
+
+  <!-- 1. Latest Articles -->
+  <section class="section container">
+    <div class="section-title animate fade-up">
+      <h2>Latest Articles</h2>
+    </div>
+    <div class="grid grid-cols-3">
+      <div class="blog-card animate slide-up">
+        <img src="https://images.pexels.com/photos/2764182/pexels-photo-2764182.jpeg" alt="Blog 1" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Home Office • Aug 05, 2026</div>
+          <h3 style="font-size: 1.25rem;">Building the Perfect Remote Setup</h3>
+          <p class="text-muted">Discover how to ergonomically design your home office for maximum productivity.</p>
+          <a href="#" class="btn btn-text">Read More</a>
+        </div>
+      </div>
+      <div class="blog-card animate slide-up delay-100">
+        <img src="https://images.pexels.com/photos/32677196/pexels-photo-32677196.jpeg" alt="Blog 2" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Student Living • Jul 28, 2026</div>
+          <h3 style="font-size: 1.25rem;">Dorm Room Optimization</h3>
+          <p class="text-muted">Small space? No problem. Here are 5 ways to make your dorm feel like a palace.</p>
+          <a href="#" class="btn btn-text">Read More</a>
+        </div>
+      </div>
+      <div class="blog-card animate slide-up delay-200">
+        <img src="https://images.pexels.com/photos/29726512/pexels-photo-29726512.jpeg" alt="Blog 3" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-meta">Furniture Tips • Jul 15, 2026</div>
+          <h3 style="font-size: 1.25rem;">Renting vs. Buying Furniture</h3>
+          <p class="text-muted">A financial breakdown of why renting furniture is the smarter choice for nomads.</p>
+          <a href="#" class="btn btn-text">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Furniture Tips -->
+  <!-- 3. Student Living Ideas -->
+  <!-- 4. Interior Inspiration -->
+  <section class="section container">
+    <div class="section-title animate fade-up">
+      <h2>Popular Categories</h2>
+    </div>
+    <div class="grid grid-cols-3 text-center">
+      <div class="card p-6 animate zoom-in" style="padding: var(--spacing-6);">
+        <h3 class="mb-4">Furniture Tips</h3>
+        <p class="text-muted">Maintenance and styling advice.</p>
+      </div>
+      <div class="card p-6 animate zoom-in delay-100" style="padding: var(--spacing-6);">
+        <h3 class="mb-4">Student Living</h3>
+        <p class="text-muted">Hacks for college students.</p>
+      </div>
+      <div class="card p-6 animate zoom-in delay-200" style="padding: var(--spacing-6);">
+        <h3 class="mb-4">Interior Inspiration</h3>
+        <p class="text-muted">Trending styles and color palettes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Newsletter Signup -->
+  <section class="section" style="background-color: #0f172a; color: #fff;">
+    <div class="container text-center animate fade-up">
+      <h2 style="color: #fff;">Never Miss an Update</h2>
+      <p style="color: #ccc;">Get our latest articles delivered to your inbox weekly.</p>
+      <form class="newsletter-form mt-4" style="max-width: 400px; margin: 0 auto; display: flex; gap: 8px;">
+        <input type="email" class="form-control" placeholder="Email address" required>
+        <button type="submit" class="btn btn-accent">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col animate fade-up">
+          <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+          <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish
+            homes with affordable, flexible plans.</p>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col animate fade-up delay-100">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+
+            <a href="pricing.html">Pricing Plans</a>
+            <a href="blog.html">Our Blog</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col animate fade-up delay-200">
+          <h4>Rental Categories</h4>
+          <div class="footer-links">
+            <a href="furniture-categories.html">Bedroom Sets</a>
+            <a href="furniture-categories.html">Living Room</a>
+            <a href="furniture-categories.html">Home Office</a>
+            <a href="rental-packages.html">Student Packages</a>
+            <a href="rental-packages.html">Corporate Packages</a>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col animate fade-up delay-300">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="faq.html">FAQ</a>
+            <a href="delivery-setup.html">Delivery & Setup</a>
+            <a href="dashboard/support.html">Submit a Ticket</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+
+        <!-- Col 5 -->
+        <div class="footer-col animate fade-up delay-400">
+          <h4>Newsletter</h4>
+          <p>Subscribe to get the latest updates and exclusive offers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-accent icon-btn"><i class="ri-send-plane-fill"></i></button>
+          </form>
+          <div class="mt-4">
+            <p><strong>Contact:</strong></p>
+            <p><i class="ri-mail-line"></i> support@rentnest.com</p>
+            <p><i class="ri-phone-line"></i> +1 (800) 123-4567</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 RentNest. All rights reserved.</p>
+        <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          Back To Top <i class="ri-arrow-up-line"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,1 +1,513 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentNest | Premium Furniture Rental for Students & Professionals</title>
+  <meta name="description"
+    content="RentNest offers premium furniture rental packages for students and young professionals. Transform your space with affordable, flexible plans.">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- Favicon (using logo icon logic) -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <style>
+    /* Home 1 Specific Styles */
+    .hero-section {
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background-image: url('file:///C:/Users/Shalani%20A/.gemini/antigravity-ide/brain/27e15c2a-55eb-4c66-96b6-932c16313d68/hero_home1_1786123021851.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--color-bg) 0%, rgba(15, 23, 42, 0.4) 100%);
+    }
+
+    [data-theme="dark"] .hero-overlay {
+      background: linear-gradient(90deg, var(--color-bg) 0%, rgba(2, 6, 23, 0.6) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: var(--spacing-6);
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-8);
+      color: var(--color-text);
+    }
+
+    /* Category Cards */
+    .category-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .category-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+      display: flex;
+      align-items: flex-end;
+      padding: var(--spacing-6);
+    }
+
+    .category-title {
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    /* Why Rent */
+    .why-rent-section {
+      background-image: url('file:///C:/Users/Shalani%20A/.gemini/antigravity-ide/brain/27e15c2a-55eb-4c66-96b6-932c16313d68/why_rent_bg_1786123049613.png');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: #fff;
+    }
+
+    .why-rent-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .why-rent-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: var(--spacing-6);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .info-card i {
+      font-size: 3rem;
+      color: var(--color-accent);
+      margin-bottom: var(--spacing-4);
+      display: inline-block;
+    }
+
+    .info-card h3 {
+      color: #fff;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      padding: var(--spacing-8);
+    }
+
+    .rating {
+      color: var(--color-warning);
+      margin-bottom: var(--spacing-4);
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-4);
+      margin-top: var(--spacing-6);
+    }
+
+    .user-profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--color-primary);
+      color: #fff;
+      text-align: center;
+      padding: var(--spacing-24) 0;
+    }
+
+    .cta-section h2 {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Injection Point -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <i class="ri-home-smile-line"></i>
+          <span>RentNest</span>
+        </a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home-2.html">Home 2</a>
+        <a href="about.html">About</a>
+        <a href="rental-packages.html">Rental Packages</a>
+        <a href="furniture-categories.html">Furniture</a>
+        <a href="pricing.html">Pricing</a>
+
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="ri-moon-line"></i>
+        </button>
+        <button class="rtl-toggle" aria-label="Toggle RTL">
+          <i class="ri-arrow-left-right-line"></i>
+        </button>
+        <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
+
+        <a href="signup.html" class="btn btn-primary">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Open Mobile Menu">
+        <i class="ri-menu-line"></i>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- 1. Luxury Hero Banner -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content animate fade-right">
+      <span class="badge badge-accent mb-4">Premium Furniture Rental</span>
+      <h1>Transform Your Space, Effortlessly.</h1>
+      <p>Flexible furniture rental plans for students and young professionals. Enjoy luxury living without the heavy
+        price tag.</p>
+      <div class="hero-btns">
+        <a href="rental-packages.html" class="btn btn-primary">View Packages</a>
+        <a href="how-it-works.html" class="btn btn-outline"
+          style="background: var(--color-surface); color: var(--color-primary) !important;">How it works <i
+            class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Popular Furniture Categories -->
+  <section class="section container">
+    <div class="section-title animate fade-up">
+      <h2>Explore by Category</h2>
+      <p>Curated collections to match your unique style and space requirements.</p>
+    </div>
+
+    <div class="grid grid-cols-4">
+      <a href="furniture-categories.html" class="category-card animate fade-up delay-100">
+        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=600&q=80"
+          alt="Beds" loading="lazy">
+        <div class="category-overlay"><span class="category-title">Beds & Mattresses</span></div>
+      </a>
+      <a href="furniture-categories.html" class="category-card animate fade-up delay-200">
+        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80"
+          alt="Study Tables" loading="lazy">
+        <div class="category-overlay"><span class="category-title">Study Tables</span></div>
+      </a>
+      <a href="furniture-categories.html" class="category-card animate fade-up delay-300">
+        <img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?auto=format&fit=crop&w=600&q=80"
+          alt="Living Room" loading="lazy">
+        <div class="category-overlay"><span class="category-title">Sofas & Living</span></div>
+      </a>
+      <a href="furniture-categories.html" class="category-card animate fade-up delay-400">
+        <img src="https://images.pexels.com/photos/35057475/pexels-photo-35057475.jpeg" alt="Dining Sets"
+          loading="lazy">
+        <div class="category-overlay"><span class="category-title">Dining Sets</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. Student Rental Packages -->
+  <section class="section" style="background-color: var(--color-surface-hover);">
+    <div class="container">
+      <div class="section-title animate fade-up">
+        <h2>Curated Packages for You</h2>
+        <p>Bundle and save with our expertly designed room packages.</p>
+      </div>
+
+      <div class="grid grid-cols-3">
+        <!-- Package 1 -->
+        <div class="card package-card animate slide-up delay-100">
+          <img
+            src="file:///C:/Users/Shalani%20A/.gemini/antigravity-ide/brain/27e15c2a-55eb-4c66-96b6-932c16313d68/student_pkg_1786123036219.png"
+            alt="Student Package" class="package-img" loading="lazy">
+          <h3>The Essential Student</h3>
+          <p class="text-muted">Perfect for dorms. Includes single bed, study desk, and ergonomic chair.</p>
+          <div class="price">$49<span>/mo</span></div>
+          <a href="student-plans.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="card package-card animate slide-up delay-200"
+          style="border: 2px solid var(--color-accent); transform: scale(1.05); overflow: visible;">
+          <div style="position:absolute; top:0; left:50%; transform:translate(-50%, -50%); z-index: 10;">
+            <span class="badge badge-accent">Most Popular</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80"
+            alt="Pro Package" class="package-img" loading="lazy">
+          <h3>Young Professional</h3>
+          <p class="text-muted">Upgrade your space. Queen bed, premium mattress, and 2-seater sofa.</p>
+          <div class="price">$89<span>/mo</span></div>
+          <a href="professional-plans.html" class="btn btn-primary" style="width: 100%;">View Details</a>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="card package-card animate slide-up delay-300">
+          <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"
+            alt="Executive Package" class="package-img" loading="lazy">
+          <h3>The Executive</h3>
+          <p class="text-muted">Full apartment setup. Living, dining, and luxury bedroom collection.</p>
+          <div class="price">$149<span>/mo</span></div>
+          <a href="rental-packages.html" class="btn btn-outline" style="width: 100%;">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Why Rent Instead of Buy -->
+  <section class="section why-rent-section">
+    <div class="why-rent-overlay"></div>
+    <div class="container why-rent-content">
+      <div class="section-title animate fade-up">
+        <h2 style="color:#fff;">Why Rent with RentNest?</h2>
+        <p style="color:#ccc;">Experience the freedom of renting without compromising on quality.</p>
+      </div>
+
+      <div class="grid grid-cols-4">
+        <div class="info-card animate zoom-in delay-100">
+          <i class="ri-money-dollar-circle-line"></i>
+          <h3>Huge Savings</h3>
+          <p style="color:#ddd; font-size:0.9rem;">Don't tie up your capital. Renting is a fraction of the cost of
+            buying.</p>
+        </div>
+        <div class="info-card animate zoom-in delay-200">
+          <i class="ri-refresh-line"></i>
+          <h3>Easy Swaps</h3>
+          <p style="color:#ddd; font-size:0.9rem;">Bored of the look? Swap your furniture for something new anytime.</p>
+        </div>
+        <div class="info-card animate zoom-in delay-300">
+          <i class="ri-truck-line"></i>
+          <h3>Free Delivery</h3>
+          <p style="color:#ddd; font-size:0.9rem;">We deliver, assemble, and pick up for free. Zero hassle for you.</p>
+        </div>
+        <div class="info-card animate zoom-in delay-400">
+          <i class="ri-shield-star-line"></i>
+          <h3>Premium Quality</h3>
+          <p style="color:#ddd; font-size:0.9rem;">All our furniture is meticulously cleaned and maintained like new.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Customer Testimonials -->
+  <section class="section container">
+    <div class="section-title animate fade-up">
+      <h2>Loved by Students & Pros</h2>
+      <p>Hear from our satisfied customers who transformed their spaces.</p>
+    </div>
+
+    <div class="grid grid-cols-3">
+      <div class="card testimonial-card animate fade-up delay-100">
+        <div class="rating">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p>"RentNest made moving into my dorm so easy. The desk and chair are super comfortable, and it was
+          significantly cheaper than buying new stuff."</p>
+        <div class="user-profile">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+            alt="User" loading="lazy">
+          <div>
+            <h4 style="margin:0; font-size:1rem;">Sarah Jenkins</h4>
+            <span style="font-size:0.875rem; color:var(--color-muted);">College Student</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card testimonial-card animate fade-up delay-200">
+        <div class="rating">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p>"As a young professional who moves cities often, RentNest is a lifesaver. The premium quality of the sofa and
+          bed exceeded my expectations."</p>
+        <div class="user-profile">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80"
+            alt="User" loading="lazy">
+          <div>
+            <h4 style="margin:0; font-size:1rem;">Michael Chang</h4>
+            <span style="font-size:0.875rem; color:var(--color-muted);">Software Engineer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card testimonial-card animate fade-up delay-300">
+        <div class="rating">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+            class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+        </div>
+        <p>"The delivery and setup process was flawless. They handled everything. The aesthetic of the furniture
+          perfectly matches my modern apartment."</p>
+        <div class="user-profile">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+            alt="User" loading="lazy">
+          <div>
+            <h4 style="margin:0; font-size:1rem;">Emily Rodriguez</h4>
+            <span style="font-size:0.875rem; color:var(--color-muted);">Marketing Manager</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA + Footer Preview -->
+  <section class="cta-section">
+    <div class="container animate zoom-in">
+      <h2>Ready to upgrade your space?</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto var(--spacing-8) auto;">Join thousands of
+        happy renters. Browse our collections and get your furniture delivered within 48 hours.</p>
+      <a href="signup.html" class="btn btn-accent" style="font-size: 1.125rem; padding: 1rem 2rem;">Get Started Now</a>
+    </div>
+  </section>
+
+  <!-- Footer Injection Point -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col animate fade-up">
+          <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+          <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish
+            homes with affordable, flexible plans.</p>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col animate fade-up delay-100">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+
+            <a href="pricing.html">Pricing Plans</a>
+            <a href="blog.html">Our Blog</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col animate fade-up delay-200">
+          <h4>Rental Categories</h4>
+          <div class="footer-links">
+            <a href="furniture-categories.html">Bedroom Sets</a>
+            <a href="furniture-categories.html">Living Room</a>
+            <a href="furniture-categories.html">Home Office</a>
+            <a href="rental-packages.html">Student Packages</a>
+            <a href="rental-packages.html">Corporate Packages</a>
+          </div>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col animate fade-up delay-300">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="faq.html">FAQ</a>
+            <a href="delivery-setup.html">Delivery & Setup</a>
+            <a href="dashboard/support.html">Submit a Ticket</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+
+        <!-- Col 5 -->
+        <div class="footer-col animate fade-up delay-400">
+          <h4>Newsletter</h4>
+          <p>Subscribe to get the latest updates and exclusive offers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-accent icon-btn"><i class="ri-send-plane-fill"></i></button>
+          </form>
+          <div class="mt-4">
+            <p><strong>Contact:</strong></p>
+            <p><i class="ri-mail-line"></i> support@rentnest.com</p>
+            <p><i class="ri-phone-line"></i> +1 (800) 123-4567</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 RentNest. All rights reserved.</p>
+        <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          Back To Top <i class="ri-arrow-up-line"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
