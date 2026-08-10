@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Blog | RentNest</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -18,6 +19,9 @@
       border: 1px solid var(--color-border);
       overflow: hidden;
       transition: transform var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .blog-card:hover {
@@ -29,16 +33,31 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
+      flex-shrink: 0;
     }
 
     .blog-content {
       padding: var(--spacing-6);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .blog-content .btn-text {
+      margin-top: auto;
+      padding-top: var(--spacing-4);
+      align-self: flex-start;
     }
 
     .blog-meta {
       font-size: 0.875rem;
       color: var(--color-muted);
       margin-bottom: var(--spacing-2);
+    }
+
+    /* Ensure grid items stretch to full row height */
+    .grid-cols-3 {
+      align-items: stretch;
     }
   </style>
 </head>
@@ -63,6 +82,7 @@
 
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
+        <a href="dashboard/index.html">Dashboard</a>
       </nav>
 
       <div class="nav-actions">
@@ -72,8 +92,6 @@
         <button class="rtl-toggle" aria-label="Toggle RTL">
           <i class="ri-arrow-left-right-line"></i>
         </button>
-        <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
-
         <a href="signup.html" class="btn btn-primary">Signup</a>
       </div>
 
@@ -93,7 +111,7 @@
   </section>
 
   <!-- 1. Latest Articles -->
-  <section class="section container">
+  <section class="section"><div class="container">
     <div class="section-title animate fade-up">
       <h2>Latest Articles</h2>
     </div>
@@ -101,7 +119,7 @@
       <div class="blog-card animate slide-up">
         <img src="https://images.pexels.com/photos/2764182/pexels-photo-2764182.jpeg" alt="Blog 1" class="blog-img">
         <div class="blog-content">
-          <div class="blog-meta">Home Office • Aug 05, 2026</div>
+          <div class="blog-meta">Home Office Ã¢â‚¬Â¢ Aug 05, 2026</div>
           <h3 style="font-size: 1.25rem;">Building the Perfect Remote Setup</h3>
           <p class="text-muted">Discover how to ergonomically design your home office for maximum productivity.</p>
           <a href="#" class="btn btn-text">Read More</a>
@@ -110,7 +128,7 @@
       <div class="blog-card animate slide-up delay-100">
         <img src="https://images.pexels.com/photos/32677196/pexels-photo-32677196.jpeg" alt="Blog 2" class="blog-img">
         <div class="blog-content">
-          <div class="blog-meta">Student Living • Jul 28, 2026</div>
+          <div class="blog-meta">Student Living Ã¢â‚¬Â¢ Jul 28, 2026</div>
           <h3 style="font-size: 1.25rem;">Dorm Room Optimization</h3>
           <p class="text-muted">Small space? No problem. Here are 5 ways to make your dorm feel like a palace.</p>
           <a href="#" class="btn btn-text">Read More</a>
@@ -119,19 +137,20 @@
       <div class="blog-card animate slide-up delay-200">
         <img src="https://images.pexels.com/photos/29726512/pexels-photo-29726512.jpeg" alt="Blog 3" class="blog-img">
         <div class="blog-content">
-          <div class="blog-meta">Furniture Tips • Jul 15, 2026</div>
+          <div class="blog-meta">Furniture Tips Ã¢â‚¬Â¢ Jul 15, 2026</div>
           <h3 style="font-size: 1.25rem;">Renting vs. Buying Furniture</h3>
           <p class="text-muted">A financial breakdown of why renting furniture is the smarter choice for nomads.</p>
           <a href="#" class="btn btn-text">Read More</a>
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- 2. Furniture Tips -->
   <!-- 3. Student Living Ideas -->
   <!-- 4. Interior Inspiration -->
-  <section class="section container">
+  <section class="section"><div class="container">
     <div class="section-title animate fade-up">
       <h2>Popular Categories</h2>
     </div>
@@ -148,6 +167,7 @@
         <h3 class="mb-4">Interior Inspiration</h3>
         <p class="text-muted">Trending styles and color palettes.</p>
       </div>
+    </div>
     </div>
   </section>
 
@@ -168,7 +188,7 @@
       <div class="footer-grid">
         <!-- Col 1 -->
         <div class="footer-col animate fade-up">
-          <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+          <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
           <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish
             homes with affordable, flexible plans.</p>
           <div class="social-icons">
@@ -210,8 +230,8 @@
             <a href="faq.html">FAQ</a>
             <a href="delivery-setup.html">Delivery & Setup</a>
             <a href="dashboard/support.html">Submit a Ticket</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
           </div>
         </div>
 
@@ -244,3 +264,6 @@
 </body>
 
 </html>
+
+
+

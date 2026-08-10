@@ -136,11 +136,23 @@
 
     .info-card h3 {
       color: #fff;
+      min-height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--spacing-4);
     }
 
     /* Testimonials */
     .testimonial-card {
       padding: var(--spacing-8);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .testimonial-card p {
+      flex-grow: 1;
     }
 
     .rating {
@@ -165,13 +177,13 @@
     /* CTA Section */
     .cta-section {
       background-color: var(--color-primary);
-      color: #fff;
+      color: var(--color-bg);
       text-align: center;
       padding: var(--spacing-24) 0;
     }
 
     .cta-section h2 {
-      color: #fff;
+      color: var(--color-bg);
     }
 
     @media (max-width: 768px) {
@@ -204,6 +216,7 @@
 
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
+        <a href="dashboard/index.html">Dashboard</a>
       </nav>
 
       <div class="nav-actions">
@@ -213,8 +226,6 @@
         <button class="rtl-toggle" aria-label="Toggle RTL">
           <i class="ri-arrow-left-right-line"></i>
         </button>
-        <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
-
         <a href="signup.html" class="btn btn-primary">Signup</a>
       </div>
 
@@ -236,8 +247,7 @@
       <div class="hero-btns">
         <a href="rental-packages.html" class="btn btn-primary">View Packages</a>
         <a href="how-it-works.html" class="btn btn-outline"
-          style="background: var(--color-surface); color: var(--color-primary) !important;">How it works <i
-            class="ri-arrow-right-line"></i></a>
+          style="background: var(--color-surface); color: var(--color-primary) !important;">How it works</a>
       </div>
     </div>
   </section>
@@ -249,7 +259,7 @@
       <p>Curated collections to match your unique style and space requirements.</p>
     </div>
 
-    <div class="grid grid-cols-4">
+    <div class="grid grid-cols-4" id="category-grid">
       <a href="furniture-categories.html" class="category-card animate fade-up delay-100">
         <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=600&q=80"
           alt="Beds" loading="lazy">
@@ -265,12 +275,31 @@
           alt="Living Room" loading="lazy">
         <div class="category-overlay"><span class="category-title">Sofas & Living</span></div>
       </a>
-      <a href="furniture-categories.html" class="category-card animate fade-up delay-400">
+      <a href="furniture-categories.html" class="category-card animate fade-up delay-400 category-card-last">
         <img src="https://images.pexels.com/photos/35057475/pexels-photo-35057475.jpeg" alt="Dining Sets"
           loading="lazy">
         <div class="category-overlay"><span class="category-title">Dining Sets</span></div>
       </a>
     </div>
+    <style>
+      /* Center the lone 4th card when grid wraps to 3 columns */
+      @media (max-width: 1439px) and (min-width: 1024px) {
+        #category-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        #category-grid .category-card-last {
+          grid-column: 2;
+        }
+      }
+      @media (max-width: 1023px) {
+        #category-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        #category-grid .category-card-last {
+          grid-column: auto;
+        }
+      }
+    </style>
   </section>
 
   <!-- 3. Student Rental Packages -->
@@ -284,9 +313,7 @@
       <div class="grid grid-cols-3">
         <!-- Package 1 -->
         <div class="card package-card animate slide-up delay-100">
-          <img
-            src="file:///C:/Users/Shalani%20A/.gemini/antigravity-ide/brain/27e15c2a-55eb-4c66-96b6-932c16313d68/student_pkg_1786123036219.png"
-            alt="Student Package" class="package-img" loading="lazy">
+          <img src="images/student-package.png" alt="Student Package" class="package-img" loading="lazy">
           <h3>The Essential Student</h3>
           <p class="text-muted">Perfect for dorms. Includes single bed, study desk, and ergonomic chair.</p>
           <div class="price">$49<span>/mo</span></div>
@@ -348,7 +375,7 @@
         </div>
         <div class="info-card animate zoom-in delay-400">
           <i class="ri-shield-star-line"></i>
-          <h3>Premium Quality</h3>
+          <h3>Quality</h3>
           <p style="color:#ddd; font-size:0.9rem;">All our furniture is meticulously cleaned and maintained like new.
           </p>
         </div>
@@ -421,7 +448,7 @@
   <section class="cta-section">
     <div class="container animate zoom-in">
       <h2>Ready to upgrade your space?</h2>
-      <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto var(--spacing-8) auto;">Join thousands of
+      <p style="color: var(--color-bg); opacity: 0.8; max-width: 600px; margin: 0 auto var(--spacing-8) auto;">Join thousands of
         happy renters. Browse our collections and get your furniture delivered within 48 hours.</p>
       <a href="signup.html" class="btn btn-accent" style="font-size: 1.125rem; padding: 1rem 2rem;">Get Started Now</a>
     </div>
@@ -433,7 +460,7 @@
       <div class="footer-grid">
         <!-- Col 1 -->
         <div class="footer-col animate fade-up">
-          <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+          <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
           <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish
             homes with affordable, flexible plans.</p>
           <div class="social-icons">
@@ -475,8 +502,8 @@
             <a href="faq.html">FAQ</a>
             <a href="delivery-setup.html">Delivery & Setup</a>
             <a href="dashboard/support.html">Submit a Ticket</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
           </div>
         </div>
 
@@ -511,3 +538,4 @@
 </body>
 
 </html>
+

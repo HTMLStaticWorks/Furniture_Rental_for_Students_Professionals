@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>FAQ | RentNest</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -17,6 +18,10 @@
       border-radius: var(--radius-md);
       margin-bottom: var(--spacing-4);
       overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+    .faq-item.open {
+      box-shadow: 0 0 0 2px var(--color-accent);
     }
     .faq-question {
       padding: var(--spacing-4) var(--spacing-6);
@@ -26,10 +31,27 @@
       align-items: center;
       font-weight: 600;
       color: var(--color-heading);
+      user-select: none;
+    }
+    .faq-question i {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-question i {
+      transform: rotate(180deg);
     }
     .faq-answer {
+      display: none;
       padding: 0 var(--spacing-6) var(--spacing-4) var(--spacing-6);
       color: var(--color-muted);
+      animation: fadeIn 0.2s ease;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -53,6 +75,7 @@
       
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
+        <a href="dashboard/index.html">Dashboard</a>
     </nav>
 
     <div class="nav-actions">
@@ -62,8 +85,6 @@
       <button class="rtl-toggle" aria-label="Toggle RTL">
         <i class="ri-arrow-left-right-line"></i>
       </button>
-      <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
-      
       <a href="signup.html" class="btn btn-primary">Signup</a>
     </div>
 
@@ -151,7 +172,7 @@
     <div class="footer-grid">
       <!-- Col 1 -->
       <div class="footer-col animate fade-up">
-        <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+        <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
         <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish homes with affordable, flexible plans.</p>
         <div class="social-icons">
           <a href="#"><i class="ri-facebook-fill"></i></a>
@@ -192,8 +213,8 @@
           <a href="faq.html">FAQ</a>
           <a href="delivery-setup.html">Delivery & Setup</a>
           <a href="dashboard/support.html">Submit a Ticket</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
         </div>
       </div>
 
@@ -223,8 +244,27 @@
 </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+      question.addEventListener('click', function() {
+        var item = this.parentElement;
+        var isOpen = item.classList.contains('open');
+        // Close all open items
+        document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+          openItem.classList.remove('open');
+        });
+        // If this one was closed, open it
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
+
+
 
 
 

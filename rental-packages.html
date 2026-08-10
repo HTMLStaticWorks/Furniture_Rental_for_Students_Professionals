@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Rental Packages | RentNest</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -31,6 +32,7 @@
       
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
+        <a href="dashboard/index.html">Dashboard</a>
     </nav>
 
     <div class="nav-actions">
@@ -40,8 +42,6 @@
       <button class="rtl-toggle" aria-label="Toggle RTL">
         <i class="ri-arrow-left-right-line"></i>
       </button>
-      <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
-      
       <a href="signup.html" class="btn btn-primary">Signup</a>
     </div>
 
@@ -60,8 +60,8 @@
   </section>
 
   <!-- 1. Starter Package -->
-  <section class="section container">
-    <div class="grid grid-cols-2" style="align-items: center;">
+  <section class="section">
+    <div class="container grid grid-cols-2" style="align-items: center; gap: 4rem;">
       <div class="animate fade-right">
         <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" alt="Starter" class="img-responsive">
       </div>
@@ -81,7 +81,7 @@
 
   <!-- 2. Student Package -->
   <section class="section" style="background-color: var(--color-surface-hover);">
-    <div class="container grid grid-cols-2" style="align-items: center;">
+    <div class="container grid grid-cols-2" style="align-items: center; gap: 4rem;">
       <div class="animate fade-right order-2">
         <h2>Student Package</h2>
         <div class="price">$59<span>/mo</span></div>
@@ -101,8 +101,8 @@
   </section>
 
   <!-- 3. Professional Package -->
-  <section class="section container">
-    <div class="grid grid-cols-2" style="align-items: center;">
+  <section class="section">
+    <div class="container grid grid-cols-2" style="align-items: center; gap: 4rem;">
       <div class="animate fade-right">
         <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Pro" class="img-responsive">
       </div>
@@ -123,7 +123,7 @@
 
   <!-- 4. Family Package -->
   <section class="section" style="background-color: var(--color-surface-hover);">
-    <div class="container grid grid-cols-2" style="align-items: center;">
+    <div class="container grid grid-cols-2" style="align-items: center; gap: 4rem;">
       <div class="animate fade-right order-2">
         <h2>Family Package</h2>
         <div class="price">$249<span>/mo</span></div>
@@ -143,10 +143,11 @@
   </section>
 
   <!-- 5. Enterprise Package -->
-  <section class="section container text-center animate zoom-in">
+  <section class="section animate zoom-in"><div class="container text-center">
     <h2>Enterprise & Corporate</h2>
     <p>Furnishing company apartments or co-living spaces? We offer bulk discounts.</p>
     <a href="contact.html" class="btn btn-accent mt-4">Contact Sales</a>
+    </div>
   </section>
 
   <footer class="footer">
@@ -154,7 +155,7 @@
     <div class="footer-grid">
       <!-- Col 1 -->
       <div class="footer-col animate fade-up">
-        <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+        <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
         <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish homes with affordable, flexible plans.</p>
         <div class="social-icons">
           <a href="#"><i class="ri-facebook-fill"></i></a>
@@ -195,8 +196,8 @@
           <a href="faq.html">FAQ</a>
           <a href="delivery-setup.html">Delivery & Setup</a>
           <a href="dashboard/support.html">Submit a Ticket</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
         </div>
       </div>
 
@@ -228,6 +229,10 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 

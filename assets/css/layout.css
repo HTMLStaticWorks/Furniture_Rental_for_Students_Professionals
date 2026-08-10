@@ -1,9 +1,21 @@
 /* Container and Layout Grid */
+
+
+/* Base Utility Classes for Ordering (Desktop/Tablet) */
+.order-first { order: -1; }
+.order-last { order: 999; }
+
+/* Responsive Container and Body setup for Overflow Protection */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-4);
+  box-sizing: border-box;
 }
 
 .section {
@@ -89,7 +101,20 @@
 
 .nav-links {
   display: flex;
-  gap: var(--spacing-6);
+  gap: var(--spacing-4);
+}
+
+/* Compressed nav for medium screens (1200–1400px) */
+@media (max-width: 1350px) {
+  .nav-links {
+    gap: var(--spacing-3);
+  }
+  .nav-links a {
+    font-size: 0.875rem;
+  }
+  .nav-actions {
+    gap: var(--spacing-2);
+  }
 }
 
 .nav-links a {
@@ -128,20 +153,26 @@
 
 .theme-toggle,
 .rtl-toggle {
-  background: none;
-  border: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   color: var(--color-text);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover,
 .rtl-toggle:hover {
   color: var(--color-accent);
+  background: var(--color-surface-hover);
+  border-color: var(--color-accent);
 }
 
 .mobile-menu-btn {
@@ -223,6 +254,10 @@
   margin-top: var(--spacing-4);
 }
 
+.newsletter-form .icon-btn {
+  border-radius: var(--radius-md);
+}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -257,7 +292,9 @@
   .grid-cols-4,
   .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  
+}
+
+@media (max-width: 1199px) {
   .nav-links, 
   .nav-actions .btn:not(.icon-btn),
   .nav-actions .theme-toggle,
@@ -299,7 +336,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: calc(80px + 300px); /* Adjust based on menu height */
+    top: calc(80px + 420px); /* Pushed down to clear the Dashboard link */
     right: 0;
     left: auto;
     width: 80%;
@@ -322,30 +359,68 @@
     color: var(--color-text);
   }
   
-  .nav-actions.mobile-active .theme-toggle::after {
-    content: 'Toggle Theme';
-    margin-left: var(--spacing-3);
-  }
-  [dir="rtl"] .nav-actions.mobile-active .theme-toggle::after {
-    margin-left: 0;
-    margin-right: var(--spacing-3);
-  }
 
-  .nav-actions.mobile-active .rtl-toggle::after {
-    content: 'Toggle RTL';
-    margin-left: var(--spacing-3);
-  }
-  [dir="rtl"] .nav-actions.mobile-active .rtl-toggle::after {
-    margin-left: 0;
-    margin-right: var(--spacing-3);
-  }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   .grid-cols-4,
   .grid-cols-3,
   .grid-cols-2 { grid-template-columns: 1fr; }
   
+  /* Reorder alternating rows on mobile to stack consistently (Image first) */
+  .order-1 { order: -1 !important; }
+  .order-2 { order: 1 !important; }
+
+  /* Increase container side padding on mobile to prevent edge bleed (16px) */
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+
+  /* Add breathing room inside grids so items don't touch edges */
+  .grid {
+    gap: var(--spacing-4);
+  }
+
+  /* Images inside grid items — full width, properly rounded, no edge bleed */
+  .grid img,
+  .grid .img-responsive,
+  .category-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
+  }
+
+  /* Category cards — ensure they have inner padding */
+  .category-card {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  /* img-responsive inside section areas */
+  .img-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Section-level padding to ensure sections don't bleed to edges */
+  .section {
+    padding: 60px 0;
+  }
+
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: var(--spacing-4); text-align: center; }
+}
+
+@media (max-width: 1023px) {
+  /* On tablet, collapse 2-column image+text layouts to stacked: image on top, text below */
+  .grid-cols-2 { grid-template-columns: 1fr; }
+  
+  /* Ensure images in stacked layouts fill width at natural ratio */
+  .grid-cols-2 .img-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
 }

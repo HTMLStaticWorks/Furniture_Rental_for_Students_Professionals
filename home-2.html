@@ -97,14 +97,25 @@
 
     .right::after {
       left: -10px;
+      right: auto;
+    }
+
+    /* RTL: mirror the entire timeline layout */
+    [dir="rtl"] .timeline::after {
+      left: auto;
+      right: 50%;
+      margin-left: 0;
+      margin-right: -2px;
     }
 
     [dir="rtl"] .left {
-      left: 50%;
+      left: auto;
+      right: 0;
     }
 
     [dir="rtl"] .right {
-      left: 0;
+      left: auto;
+      right: 50%;
     }
 
     [dir="rtl"] .left::after {
@@ -115,6 +126,10 @@
     [dir="rtl"] .right::after {
       left: auto;
       right: -10px;
+    }
+
+    [dir="rtl"] .timeline-content {
+      text-align: right;
     }
 
     .timeline-content {
@@ -147,6 +162,7 @@
 
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
+        <a href="dashboard/index.html">Dashboard</a>
       </nav>
 
       <div class="nav-actions">
@@ -156,8 +172,6 @@
         <button class="rtl-toggle" aria-label="Toggle RTL">
           <i class="ri-arrow-left-right-line"></i>
         </button>
-        <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
-
         <a href="signup.html" class="btn btn-primary">Signup</a>
       </div>
 
@@ -176,7 +190,19 @@
         way to furnish your home. Premium furniture rentals with flexible terms and free delivery.</p>
       <div class="hero-btns">
         <a href="furniture-categories.html" class="btn btn-primary">Browse Catalog</a>
-        <a href="about.html" class="btn btn-text">Learn More <i class="ri-arrow-right-line"></i></a>
+        <a href="about.html" class="btn btn-text">Learn More</a>
+      </div>
+      
+      <div style="margin-top: 2.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text); font-weight: 500; font-size: 0.95rem;">
+          <i class="ri-checkbox-circle-fill" style="color: var(--color-success); font-size: 1.25rem;"></i> No Deposit
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text); font-weight: 500; font-size: 0.95rem;">
+          <i class="ri-truck-fill" style="color: var(--color-success); font-size: 1.25rem;"></i> Free Delivery & Setup
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text); font-weight: 500; font-size: 0.95rem;">
+          <i class="ri-exchange-funds-fill" style="color: var(--color-success); font-size: 1.25rem;"></i> Swap Anytime
+        </div>
       </div>
     </div>
     <div class="hero-image animate fade-left"></div>
@@ -281,7 +307,7 @@
   <!-- 5. Rental Benefits -->
   <section class="section container text-center animate zoom-in">
     <h2>Why RentNest?</h2>
-    <div class="grid grid-cols-4 mt-8">
+    <div class="grid grid-cols-4 mt-8" id="why-grid">
       <div class="card animate slide-up delay-100" style="padding: var(--spacing-6);">
         <i class="ri-leaf-line" style="font-size: 2.5rem; color: var(--color-accent);"></i>
         <h4 class="mt-4">Sustainable</h4>
@@ -297,12 +323,27 @@
         <h4 class="mt-4">Maintenance</h4>
         <p class="text-muted">Free repairs included.</p>
       </div>
-      <div class="card animate slide-up delay-400" style="padding: var(--spacing-6);">
+      <div class="card animate slide-up delay-400 why-card-last" style="padding: var(--spacing-6);">
         <i class="ri-truck-line" style="font-size: 2.5rem; color: var(--color-accent);"></i>
         <h4 class="mt-4">Relocation</h4>
         <p class="text-muted">Move to a new city? We move it.</p>
       </div>
     </div>
+    <style>
+      @media (max-width: 1439px) and (min-width: 1024px) {
+        #why-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        #why-grid .why-card-last {
+          grid-column: 2;
+        }
+      }
+      @media (max-width: 1023px) {
+        #why-grid .why-card-last {
+          grid-column: auto;
+        }
+      }
+    </style>
   </section>
 
   <!-- 6. Newsletter + CTA -->
@@ -323,7 +364,7 @@
       <div class="footer-grid">
         <!-- Col 1 -->
         <div class="footer-col animate fade-up">
-          <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+          <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
           <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish
             homes with affordable, flexible plans.</p>
           <div class="social-icons">
@@ -365,8 +406,8 @@
             <a href="faq.html">FAQ</a>
             <a href="delivery-setup.html">Delivery & Setup</a>
             <a href="dashboard/support.html">Submit a Ticket</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
           </div>
         </div>
 
@@ -399,3 +440,6 @@
 </body>
 
 </html>
+
+
+

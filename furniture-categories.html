@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Furniture Categories | RentNest</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -29,9 +30,33 @@
     .category-info {
       flex: 1;
     }
-    @media (max-width: 768px) {
-      .category-row, .category-row.reverse { flex-direction: column; }
-      .category-img { height: 250px; width: 100%; }
+    @media (max-width: 1199px) {
+      .category-row,
+      .category-row.reverse {
+        flex-direction: column;
+      }
+      .category-img {
+        height: auto;
+        width: 100%;
+        max-height: none;
+        flex: none;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+      .category-info {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .category-img {
+        aspect-ratio: 4 / 3;
+        border-radius: var(--radius-md);
+      }
+      .category-row {
+        gap: var(--spacing-4);
+        margin-bottom: var(--spacing-8);
+      }
     }
   </style>
 </head>
@@ -55,6 +80,7 @@
       
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
+        <a href="dashboard/index.html">Dashboard</a>
     </nav>
 
     <div class="nav-actions">
@@ -64,8 +90,6 @@
       <button class="rtl-toggle" aria-label="Toggle RTL">
         <i class="ri-arrow-left-right-line"></i>
       </button>
-      <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
-      
       <a href="signup.html" class="btn btn-primary">Signup</a>
     </div>
 
@@ -84,62 +108,92 @@
   </section>
 
   <!-- 1. Bedroom -->
-  <section class="section container">
+  <section class="section"><div class="container">
     <div class="category-row animate slide-up">
       <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=800&q=80" alt="Bedroom" class="category-img">
       <div class="category-info">
         <h2>Bedroom</h2>
         <p>Rest easy with our premium beds, mattresses, and wardrobes.</p>
+        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Memory Foam Mattresses</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Wooden & Metal Bed Frames</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Spacious Wardrobes & Dressers</li>
+        </ul>
         <a href="signup.html" class="btn btn-primary mt-4">Browse Bedroom</a>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- 2. Living Room -->
-  <section class="section container">
+  <section class="section"><div class="container">
     <div class="category-row reverse animate slide-up delay-100">
       <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" alt="Living Room" class="category-img">
       <div class="category-info">
         <h2>Living Room</h2>
         <p>Sofas, coffee tables, and TV units to make your space cozy and inviting.</p>
+        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Sectionals & Loveseats</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Solid Wood Coffee Tables</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Modern TV Units</li>
+        </ul>
         <a href="signup.html" class="btn btn-outline mt-4">Browse Living Room</a>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- 3. Study Room -->
-  <section class="section container">
+  <section class="section"><div class="container">
     <div class="category-row animate slide-up delay-100">
       <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80" alt="Study Room" class="category-img">
       <div class="category-info">
         <h2>Study Room</h2>
         <p>Create the perfect focus zone with our desks and bookshelves.</p>
+        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Minimalist Writing Desks</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Tiered Bookshelves</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Desk Lamps & Storage</li>
+        </ul>
         <a href="signup.html" class="btn btn-primary mt-4">Browse Study Room</a>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- 4. Office -->
-  <section class="section container">
+  <section class="section"><div class="container">
     <div class="category-row reverse animate slide-up delay-100">
       <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Office" class="category-img">
       <div class="category-info">
         <h2>Home Office</h2>
         <p>Ergonomic chairs and professional desks for maximum productivity.</p>
+        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Ergonomic Office Chairs</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Height Adjustable Desks</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Filing Cabinets</li>
+        </ul>
         <a href="signup.html" class="btn btn-outline mt-4">Browse Office</a>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- 5. Dining -->
-  <section class="section container">
+  <section class="section"><div class="container">
     <div class="category-row animate slide-up delay-100">
       <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Dining" class="category-img">
       <div class="category-info">
         <h2>Dining Spaces</h2>
         <p>From 2-seater bistros to 6-seater family tables.</p>
+        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Glass & Wood Dining Tables</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Upholstered Dining Chairs</li>
+          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Bar Stools & Counters</li>
+        </ul>
         <a href="signup.html" class="btn btn-primary mt-4">Browse Dining</a>
       </div>
+    </div>
     </div>
   </section>
 
@@ -148,7 +202,7 @@
     <div class="footer-grid">
       <!-- Col 1 -->
       <div class="footer-col animate fade-up">
-        <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+        <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
         <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish homes with affordable, flexible plans.</p>
         <div class="social-icons">
           <a href="#"><i class="ri-facebook-fill"></i></a>
@@ -189,8 +243,8 @@
           <a href="faq.html">FAQ</a>
           <a href="delivery-setup.html">Delivery & Setup</a>
           <a href="dashboard/support.html">Submit a Ticket</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
         </div>
       </div>
 
@@ -222,6 +276,10 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 

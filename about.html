@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>About Us | RentNest</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -31,6 +32,7 @@
       
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
+        <a href="dashboard/index.html">Dashboard</a>
     </nav>
 
     <div class="nav-actions">
@@ -40,8 +42,6 @@
       <button class="rtl-toggle" aria-label="Toggle RTL">
         <i class="ri-arrow-left-right-line"></i>
       </button>
-      <a href="dashboard/index.html" class="btn btn-text">Dashboard</a>
-      
       <a href="signup.html" class="btn btn-primary">Signup</a>
     </div>
 
@@ -60,15 +60,17 @@
   </section>
 
   <!-- 1. Our Story -->
-  <section class="section container">
-    <div class="grid grid-cols-2" style="align-items: center;">
-      <div class="animate fade-right">
-        <h2>Our Story</h2>
-        <p>RentNest was founded in 2024 out of a simple frustration: furnishing an apartment is expensive, wasteful, and highly inflexible.</p>
-        <p>We realized that young professionals and students are more mobile than ever. Tying yourself down with heavy, expensive furniture doesn't make sense anymore. Thus, RentNest was born—a service designed for modern nomads.</p>
-      </div>
-      <div class="animate fade-left">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team" class="img-responsive">
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-2" style="align-items: center; gap: 3rem;">
+        <div class="animate fade-right">
+          <h2>Our Story</h2>
+          <p>RentNest was founded in 2024 out of a simple frustration: furnishing an apartment is expensive, wasteful, and highly inflexible.</p>
+          <p>We realized that young professionals and students are more mobile than ever. Tying yourself down with heavy, expensive furniture doesn't make sense anymore. Thus, RentNest was bornâ€”a service designed for modern nomads.</p>
+        </div>
+        <div class="animate fade-left">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team" class="img-responsive">
+        </div>
       </div>
     </div>
   </section>
@@ -90,22 +92,24 @@
   </section>
 
   <!-- 3. Why Students Choose Us -->
-  <section class="section container">
-    <div class="section-title animate fade-up">
-      <h2>Why Students & Pros Love Us</h2>
-    </div>
-    <div class="grid grid-cols-3">
-      <div class="card p-6 animate slide-up" style="padding: var(--spacing-6);">
-        <h3 style="color: var(--color-accent);">Flexibility</h3>
-        <p>Rent for a semester or a year. Return it when you graduate or move.</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-title animate fade-up">
+        <h2>Why Students & Pros Love Us</h2>
       </div>
-      <div class="card p-6 animate slide-up delay-100" style="padding: var(--spacing-6);">
-        <h3 style="color: var(--color-accent);">No Moving Trucks</h3>
-        <p>We handle delivery and pickup. Skip the U-Haul and heavy lifting.</p>
-      </div>
-      <div class="card p-6 animate slide-up delay-200" style="padding: var(--spacing-6);">
-        <h3 style="color: var(--color-accent);">Trendy Styles</h3>
-        <p>No more hand-me-downs. Get Instagram-worthy rooms instantly.</p>
+      <div class="grid grid-cols-3">
+        <div class="card animate slide-up" style="padding: var(--spacing-6);">
+          <h3 style="color: var(--color-accent);">Flexibility</h3>
+          <p>Rent for a semester or a year. Return it when you graduate or move.</p>
+        </div>
+        <div class="card animate slide-up delay-100" style="padding: var(--spacing-6);">
+          <h3 style="color: var(--color-accent);">No Moving Trucks</h3>
+          <p>We handle delivery and pickup. Skip the U-Haul and heavy lifting.</p>
+        </div>
+        <div class="card animate slide-up delay-200" style="padding: var(--spacing-6);">
+          <h3 style="color: var(--color-accent);">Trendy Styles</h3>
+          <p>No more hand-me-downs. Get Instagram-worthy rooms instantly.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -115,20 +119,37 @@
     <div class="container text-center animate fade-up">
       <h2>Where We Operate</h2>
       <p>Currently serving major metropolitan areas and college towns.</p>
-      <div class="grid grid-cols-4 mt-8">
+      <div class="grid grid-cols-4 mt-8" id="operate-grid">
         <div class="card animate slide-up" style="padding: var(--spacing-4);"><h4 style="margin: 0;">New York</h4></div>
         <div class="card animate slide-up delay-100" style="padding: var(--spacing-4);"><h4 style="margin: 0;">Boston</h4></div>
         <div class="card animate slide-up delay-200" style="padding: var(--spacing-4);"><h4 style="margin: 0;">Austin</h4></div>
-        <div class="card animate slide-up delay-300" style="padding: var(--spacing-4);"><h4 style="margin: 0;">San Francisco</h4></div>
+        <div class="card animate slide-up delay-300 operate-card-last" style="padding: var(--spacing-4);"><h4 style="margin: 0;">San Francisco</h4></div>
       </div>
+      <style>
+        @media (max-width: 1439px) and (min-width: 1024px) {
+          #operate-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          #operate-grid .operate-card-last {
+            grid-column: 2;
+          }
+        }
+        @media (max-width: 1023px) {
+          #operate-grid .operate-card-last {
+            grid-column: auto;
+          }
+        }
+      </style>
     </div>
   </section>
 
   <!-- 5. CTA -->
-  <section class="section text-center container animate zoom-in">
-    <div class="card" style="padding: var(--spacing-16); max-width: 800px; margin: 0 auto;">
-      <h2>Ready to get started?</h2>
-      <a href="signup.html" class="btn btn-primary mt-4">Create an Account</a>
+  <section class="section animate zoom-in">
+    <div class="container text-center">
+      <div class="card" style="padding: var(--spacing-16); max-width: 800px; margin: 0 auto;">
+        <h2>Ready to get started?</h2>
+        <a href="signup.html" class="btn btn-primary mt-4">Create an Account</a>
+      </div>
     </div>
   </section>
 
@@ -137,7 +158,7 @@
     <div class="footer-grid">
       <!-- Col 1 -->
       <div class="footer-col animate fade-up">
-        <h4><i class="ri-home-smile-line" style="color: var(--color-accent); margin-right: 8px;"></i>RentNest</h4>
+        <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
         <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish homes with affordable, flexible plans.</p>
         <div class="social-icons">
           <a href="#"><i class="ri-facebook-fill"></i></a>
@@ -178,8 +199,8 @@
           <a href="faq.html">FAQ</a>
           <a href="delivery-setup.html">Delivery & Setup</a>
           <a href="dashboard/support.html">Submit a Ticket</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
         </div>
       </div>
 
@@ -211,6 +232,9 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
 
 
 

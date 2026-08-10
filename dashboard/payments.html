@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Payments | Dashboard</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -57,20 +58,20 @@
       </header>
       
       <div class="dashboard-content">
-        <div class="card p-6 mb-8 animate slide-up" style="max-width: 600px;">
+        <div class="card mb-8 animate slide-up" style="max-width: 600px; padding: 2rem;">
           <h3 class="mb-4">Upcoming Payment</h3>
-          <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: var(--spacing-4); border-bottom: 1px solid var(--color-border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; margin: 0 -0.5rem; border-radius: var(--radius-md); background: var(--color-surface-hover); margin-bottom: var(--spacing-4);">
             <div>
-              <p class="text-muted" style="margin: 0;">Due Date: Sep 01, 2026</p>
+              <p class="text-muted" style="margin: 0 0 4px 0;">Due Date: Sep 01, 2026</p>
               <h1 style="margin: 0; color: var(--color-primary);">$89.00</h1>
             </div>
             <button class="btn btn-primary">Pay Now</button>
           </div>
-          <div style="margin-top: var(--spacing-4);">
-            <h4>Payment Method</h4>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <p style="margin: 0;"><i class="ri-visa-line" style="font-size: 1.5rem; vertical-align: middle;"></i> **** **** **** 4242</p>
-              <button class="btn btn-text">Update</button>
+          <div style="border-top: 1px solid var(--color-border); padding-top: var(--spacing-4);">
+            <h4 style="margin-bottom: var(--spacing-3);">Payment Method</h4>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0;">
+              <p style="margin: 0; display: flex; align-items: center; gap: 0.5rem;"><i class="ri-visa-line" style="font-size: 1.5rem; vertical-align: middle;"></i> **** **** **** 4242</p>
+              <button class="btn btn-text" style="padding-right: 0;">Update</button>
             </div>
           </div>
         </div>
