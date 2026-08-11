@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
@@ -18,23 +19,29 @@
       gap: var(--spacing-8);
       margin-bottom: var(--spacing-16);
     }
+
     .category-row.reverse {
       flex-direction: row-reverse;
     }
+
     .category-img {
       flex: 1;
       height: 400px;
       border-radius: var(--radius-xl);
       object-fit: cover;
     }
+
     .category-info {
       flex: 1;
     }
+
     @media (max-width: 1199px) {
+
       .category-row,
       .category-row.reverse {
         flex-direction: column;
       }
+
       .category-img {
         height: auto;
         width: 100%;
@@ -43,6 +50,7 @@
         aspect-ratio: 16 / 9;
         object-fit: cover;
       }
+
       .category-info {
         width: 100%;
       }
@@ -53,6 +61,7 @@
         aspect-ratio: 4 / 3;
         border-radius: var(--radius-md);
       }
+
       .category-row {
         gap: var(--spacing-4);
         margin-bottom: var(--spacing-8);
@@ -60,44 +69,45 @@
     }
   </style>
 </head>
+
 <body>
   <header class="header">
-  <div class="container nav-container">
-    <div class="nav-logo">
-      <a href="index.html">
-        <i class="ri-home-smile-line"></i>
-        <span>RentNest</span>
-      </a>
-    </div>
+    <div class="container nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <i class="ri-home-smile-line"></i>
+          <span>RentNest</span>
+        </a>
+      </div>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="home-2.html">Home 2</a>
-      <a href="about.html">About</a>
-      <a href="rental-packages.html">Rental Packages</a>
-      <a href="furniture-categories.html">Furniture</a>
-      <a href="pricing.html">Pricing</a>
-      
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home-2.html">Home 2</a>
+        <a href="about.html">About</a>
+        <a href="rental-packages.html">Rental Packages</a>
+        <a href="furniture-categories.html">Furniture</a>
+        <a href="pricing.html">Pricing</a>
+
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
         <a href="dashboard/index.html">Dashboard</a>
-    </nav>
+      </nav>
 
-    <div class="nav-actions">
-      <button class="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="ri-moon-line"></i>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+          <i class="ri-moon-line"></i>
+        </button>
+        <button class="rtl-toggle" aria-label="Toggle RTL">
+          <i class="ri-arrow-left-right-line"></i>
+        </button>
+        <a href="signup.html" class="btn btn-primary">Signup</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Open Mobile Menu">
+        <i class="ri-menu-line"></i>
       </button>
-      <button class="rtl-toggle" aria-label="Toggle RTL">
-        <i class="ri-arrow-left-right-line"></i>
-      </button>
-      <a href="signup.html" class="btn btn-primary">Signup</a>
     </div>
-
-    <button class="mobile-menu-btn" aria-label="Open Mobile Menu">
-      <i class="ri-menu-line"></i>
-    </button>
-  </div>
-</header>
+  </header>
 
 
   <section class="section" style="padding-top: 120px; text-align: center; background: var(--color-surface-hover);">
@@ -108,180 +118,183 @@
   </section>
 
   <!-- 1. Bedroom -->
-  <section class="section"><div class="container">
-    <div class="category-row animate slide-up">
-      <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=800&q=80" alt="Bedroom" class="category-img">
-      <div class="category-info">
-        <h2>Bedroom</h2>
-        <p>Rest easy with our premium beds, mattresses, and wardrobes.</p>
-        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Memory Foam Mattresses</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Wooden & Metal Bed Frames</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Spacious Wardrobes & Dressers</li>
-        </ul>
-        <a href="signup.html" class="btn btn-primary mt-4">Browse Bedroom</a>
+  <section class="section">
+    <div class="container">
+      <div class="category-row animate slide-up">
+        <img src="https://images.pexels.com/photos/7546276/pexels-photo-7546276.jpeg" alt="Bedroom"
+          class="category-img">
+        <div class="category-info">
+          <h2>Bedroom</h2>
+          <p>Rest easy with our premium beds, mattresses, and wardrobes.</p>
+          <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Memory Foam Mattresses</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Wooden & Metal Bed Frames</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Spacious Wardrobes & Dressers</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary mt-4">Browse Bedroom</a>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
   <!-- 2. Living Room -->
-  <section class="section"><div class="container">
-    <div class="category-row reverse animate slide-up delay-100">
-      <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" alt="Living Room" class="category-img">
-      <div class="category-info">
-        <h2>Living Room</h2>
-        <p>Sofas, coffee tables, and TV units to make your space cozy and inviting.</p>
-        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Sectionals & Loveseats</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Solid Wood Coffee Tables</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Modern TV Units</li>
-        </ul>
-        <a href="signup.html" class="btn btn-outline mt-4">Browse Living Room</a>
+  <section class="section">
+    <div class="container">
+      <div class="category-row reverse animate slide-up delay-100">
+        <img src="https://images.pexels.com/photos/276746/pexels-photo-276746.jpeg" alt="Living Room"
+          class="category-img">
+        <div class="category-info">
+          <h2>Living Room</h2>
+          <p>Sofas, coffee tables, and TV units to make your space cozy and inviting.</p>
+          <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Sectionals & Loveseats</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Solid Wood Coffee Tables</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Modern TV Units</li>
+          </ul>
+          <a href="signup.html" class="btn btn-outline mt-4">Browse Living Room</a>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
   <!-- 3. Study Room -->
-  <section class="section"><div class="container">
-    <div class="category-row animate slide-up delay-100">
-      <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80" alt="Study Room" class="category-img">
-      <div class="category-info">
-        <h2>Study Room</h2>
-        <p>Create the perfect focus zone with our desks and bookshelves.</p>
-        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Minimalist Writing Desks</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Tiered Bookshelves</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Desk Lamps & Storage</li>
-        </ul>
-        <a href="signup.html" class="btn btn-primary mt-4">Browse Study Room</a>
+  <section class="section">
+    <div class="container">
+      <div class="category-row animate slide-up delay-100">
+        <img src="https://images.pexels.com/photos/8583597/pexels-photo-8583597.jpeg" alt="Study Room"
+          class="category-img">
+        <div class="category-info">
+          <h2>Study Room</h2>
+          <p>Create the perfect focus zone with our desks and bookshelves.</p>
+          <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Minimalist Writing Desks</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Tiered Bookshelves</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Desk Lamps & Storage</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary mt-4">Browse Study Room</a>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
   <!-- 4. Office -->
-  <section class="section"><div class="container">
-    <div class="category-row reverse animate slide-up delay-100">
-      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Office" class="category-img">
-      <div class="category-info">
-        <h2>Home Office</h2>
-        <p>Ergonomic chairs and professional desks for maximum productivity.</p>
-        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Ergonomic Office Chairs</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Height Adjustable Desks</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Filing Cabinets</li>
-        </ul>
-        <a href="signup.html" class="btn btn-outline mt-4">Browse Office</a>
+  <section class="section">
+    <div class="container">
+      <div class="category-row reverse animate slide-up delay-100">
+        <img src="https://images.pexels.com/photos/5524228/pexels-photo-5524228.jpeg" alt="Office" class="category-img">
+        <div class="category-info">
+          <h2>Home Office</h2>
+          <p>Ergonomic chairs and professional desks for maximum productivity.</p>
+          <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Ergonomic Office Chairs</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Height Adjustable Desks</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Filing Cabinets</li>
+          </ul>
+          <a href="signup.html" class="btn btn-outline mt-4">Browse Office</a>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
   <!-- 5. Dining -->
-  <section class="section"><div class="container">
-    <div class="category-row animate slide-up delay-100">
-      <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Dining" class="category-img">
-      <div class="category-info">
-        <h2>Dining Spaces</h2>
-        <p>From 2-seater bistros to 6-seater family tables.</p>
-        <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Glass & Wood Dining Tables</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Upholstered Dining Chairs</li>
-          <li><i class="ri-check-line" style="color: var(--color-success);"></i> Bar Stools & Counters</li>
-        </ul>
-        <a href="signup.html" class="btn btn-primary mt-4">Browse Dining</a>
+  <section class="section">
+    <div class="container">
+      <div class="category-row animate slide-up delay-100">
+        <img src="https://images.pexels.com/photos/14598479/pexels-photo-14598479.jpeg" alt="Dining"
+          class="category-img">
+        <div class="category-info">
+          <h2>Dining Spaces</h2>
+          <p>From 2-seater bistros to 6-seater family tables.</p>
+          <ul style="margin-top: var(--spacing-4); margin-bottom: var(--spacing-4);">
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Glass & Wood Dining Tables</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Upholstered Dining Chairs</li>
+            <li><i class="ri-check-line" style="color: var(--color-success);"></i> Bar Stools & Counters</li>
+          </ul>
+          <a href="signup.html" class="btn btn-primary mt-4">Browse Dining</a>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
   <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Col 1 -->
-      <div class="footer-col animate fade-up">
-        <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
-        <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish homes with affordable, flexible plans.</p>
-        <div class="social-icons">
-          <a href="#"><i class="ri-facebook-fill"></i></a>
-          <a href="#"><i class="ri-twitter-fill"></i></a>
-          <a href="#"><i class="ri-instagram-line"></i></a>
-          <a href="#"><i class="ri-linkedin-fill"></i></a>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col animate fade-up">
+          <h4 style="display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 700;"><i
+              class="ri-home-smile-line" style="color: var(--color-accent); font-size: 1.75rem;"></i>RentNest</h4>
+          <p>Premium furniture rental service for students and professionals. Transforming empty spaces into stylish
+            homes with affordable, flexible plans.</p>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </div>
         </div>
-      </div>
-      
-      <!-- Col 2 -->
-      <div class="footer-col animate fade-up delay-100">
-        <h4>Quick Links</h4>
-        <div class="footer-links">
-          <a href="about.html">About Us</a>
-          
-          <a href="pricing.html">Pricing Plans</a>
-          <a href="blog.html">Our Blog</a>
-          <a href="contact.html">Contact Us</a>
+
+        <!-- Col 2 -->
+        <div class="footer-col animate fade-up delay-100">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+
+            <a href="pricing.html">Pricing Plans</a>
+            <a href="blog.html">Our Blog</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
         </div>
-      </div>
-      
-      <!-- Col 3 -->
-      <div class="footer-col animate fade-up delay-200">
-        <h4>Rental Categories</h4>
-        <div class="footer-links">
-          <a href="furniture-categories.html">Bedroom Sets</a>
-          <a href="furniture-categories.html">Living Room</a>
-          <a href="furniture-categories.html">Home Office</a>
-          <a href="rental-packages.html">Student Packages</a>
-          <a href="rental-packages.html">Corporate Packages</a>
+
+        <!-- Col 3 -->
+        <div class="footer-col animate fade-up delay-200">
+          <h4>Rental Categories</h4>
+          <div class="footer-links">
+            <a href="furniture-categories.html">Bedroom Sets</a>
+            <a href="furniture-categories.html">Living Room</a>
+            <a href="furniture-categories.html">Home Office</a>
+            <a href="rental-packages.html">Student Packages</a>
+            <a href="rental-packages.html">Corporate Packages</a>
+          </div>
         </div>
-      </div>
-      
-      <!-- Col 4 -->
-      <div class="footer-col animate fade-up delay-300">
-        <h4>Support</h4>
-        <div class="footer-links">
-          <a href="faq.html">FAQ</a>
-          <a href="delivery-setup.html">Delivery & Setup</a>
-          <a href="dashboard/support.html">Submit a Ticket</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="privacy.html">Privacy Policy</a>
+
+        <!-- Col 4 -->
+        <div class="footer-col animate fade-up delay-300">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="faq.html">FAQ</a>
+            <a href="delivery-setup.html">Delivery & Setup</a>
+            <a href="dashboard/support.html">Submit a Ticket</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+
+        <!-- Col 5 -->
+        <div class="footer-col animate fade-up delay-400">
+          <h4>Newsletter</h4>
+          <p>Subscribe to get the latest updates and exclusive offers.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-accent icon-btn"><i class="ri-send-plane-fill"></i></button>
+          </form>
+          <div class="mt-4">
+            <p><strong>Contact:</strong></p>
+            <p><i class="ri-mail-line"></i> support@rentnest.com</p>
+            <p><i class="ri-phone-line"></i> +1 (800) 123-4567</p>
+          </div>
         </div>
       </div>
 
-      <!-- Col 5 -->
-      <div class="footer-col animate fade-up delay-400">
-        <h4>Newsletter</h4>
-        <p>Subscribe to get the latest updates and exclusive offers.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault();">
-          <input type="email" class="form-control" placeholder="Enter your email" required>
-          <button type="submit" class="btn btn-accent icon-btn"><i class="ri-send-plane-fill"></i></button>
-        </form>
-        <div class="mt-4">
-          <p><strong>Contact:</strong></p>
-          <p><i class="ri-mail-line"></i> support@rentnest.com</p>
-          <p><i class="ri-phone-line"></i> +1 (800) 123-4567</p>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RentNest. All rights reserved.</p>
+        <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          Back To Top <i class="ri-arrow-up-line"></i>
+        </button>
       </div>
     </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2026 RentNest. All rights reserved.</p>
-      <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        Back To Top <i class="ri-arrow-up-line"></i>
-      </button>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
