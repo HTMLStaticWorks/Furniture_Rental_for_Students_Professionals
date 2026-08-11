@@ -295,9 +295,23 @@
   }
 }
 
-@media (min-width: 1200px) { .dashboard-grid { grid-template-columns: 2fr 1fr !important; } }
-@media (max-width: 1199px) { .dashboard-grid { grid-template-columns: 1fr !important; } }
+/* Dashboard Grid System */
+.grid {
+  display: grid;
+  gap: var(--spacing-6);
+}
 
+@media (min-width: 1200px) {
+  .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .dashboard-grid { grid-template-columns: 2fr 1fr !important; }
+}
+
+@media (max-width: 1199px) {
+  .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr !important; }
+}
 /* Mobile Layout for Rental Cards */
 @media (max-width: 767px) {
   .rental-card-flex {

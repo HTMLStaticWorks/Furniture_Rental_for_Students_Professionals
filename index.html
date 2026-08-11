@@ -186,6 +186,27 @@
       color: var(--color-bg);
     }
 
+    .cta-section p {
+      color: var(--color-bg);
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto var(--spacing-8) auto;
+    }
+
+    /* Dark Mode Overrides for CTA */
+    [data-theme="dark"] .cta-section {
+      background-color: var(--color-surface-hover);
+      color: var(--color-text);
+    }
+
+    [data-theme="dark"] .cta-section h2 {
+      color: var(--color-heading);
+    }
+
+    [data-theme="dark"] .cta-section p {
+      color: var(--color-muted);
+    }
+
     @media (max-width: 768px) {
       .hero-content h1 {
         font-size: 2.5rem;
@@ -297,6 +318,11 @@
         }
         #category-grid .category-card-last {
           grid-column: auto;
+        }
+      }
+      @media (max-width: 767px) {
+        #category-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -448,7 +474,7 @@
   <section class="cta-section">
     <div class="container animate zoom-in">
       <h2>Ready to upgrade your space?</h2>
-      <p style="color: var(--color-bg); opacity: 0.8; max-width: 600px; margin: 0 auto var(--spacing-8) auto;">Join thousands of
+      <p>Join thousands of
         happy renters. Browse our collections and get your furniture delivered within 48 hours.</p>
       <a href="signup.html" class="btn btn-accent" style="font-size: 1.125rem; padding: 1rem 2rem;">Get Started Now</a>
     </div>
